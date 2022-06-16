@@ -10,6 +10,14 @@ const musicSchema = new mongoose.Schema({
     type:String,
     required:true
 },
+email:{
+    type:String,
+    required:true
+},
+cell:{
+    type:Number,
+    required:true
+},
 image:{
     type:String,
     required:true
