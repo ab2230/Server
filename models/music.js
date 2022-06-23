@@ -26,13 +26,26 @@ path:{
     type:String,
     required:true
 },
+lyricsPath:{
+    type:String,
+    required:true
+},
 album:{
     type:String,
-
 },
+category: {
+    type: Array,
+    required: true,
+  },
+music_length:{
+    type:String,
+    required:true
+},  
 rate:{
-    type:'number',
-    
+    type: 'number',
+    default:0.0
 }
+},{
+    timestamps:true
 })
 module.exports = mongoose.model('Music',musicSchema )

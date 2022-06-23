@@ -1,5 +1,22 @@
 const mongoose = require('mongoose')
 
+
+const Chapter = mongoose.Schema({
+    chapterName: {
+      type: String,
+    },
+    file: {
+      type: String,
+    },
+    chapterLength: {
+      type: String,
+    },
+    description2: {
+      type: String,
+    }
+  });
+
+
 const audiobookSchema = new mongoose.Schema({
     title:
     {
@@ -26,17 +43,20 @@ image:{
     type:String,
     required:true
 },
-path:{
-    type:String,
-    required:true
-},
+category: {
+    type: Array,
+    required: true,
+  },
 description:{
     type:String,
     required:true
 },
 rate:{
-    type:'number',
-    
-}
+  type: 'number',
+  default:0.0
+},
+Chapters: [Chapter]
+},{
+  timestamps:true
 })
 module.exports = mongoose.model('Audiobook',audiobookSchema )
